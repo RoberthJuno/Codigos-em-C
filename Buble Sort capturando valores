@@ -1,0 +1,57 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<locale.h>
+#define TAM 3 // CONSTANTE
+
+/* bubble sort
+	
+	i > i + 1 // condicao
+	aux = i
+	i = i + 1
+	i + 1 = aux
+	
+*/
+
+int main(){
+	system("color D");
+	setlocale(LC_ALL,"");
+	
+	int n[TAM], i, aux, cont;
+	
+	// Apresenta para capturar os numeros
+	
+	printf("Digite os %d valores: \n ", TAM);
+	for (i=0; i<TAM; i++){
+		scanf("%d", &n[i]);
+	}
+	
+	// mostra os valores digitados 
+	
+	printf("\n");
+	printf("Ordem atual dos valores digitados: ");
+		for(i=0; i<TAM; i++){
+			printf("%4d", n[i]);			
+		}	
+		
+	printf("\n\n");
+	printf("Números em ordem crescente: \n ");
+	
+	for(cont=1; cont<TAM; cont++){
+			for(i=0; i<TAM-1; i++){
+				if (n[i]>n[i+1]){
+				aux = n[i];
+				n[i] = n[i+1];
+				n[i+1] = aux;
+			}				
+		}	
+	}
+	
+	// mostra os numeros ordenados
+	
+	for(i=0; i<TAM; i++){
+		printf("%4d", n[i]);
+	}
+	
+	printf("\n");
+	return 0;
+}
